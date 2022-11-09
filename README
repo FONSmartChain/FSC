@@ -1,0 +1,8 @@
+wget https://github.com/FONSmartChain/FSC/raw/master/geth
+sudo chmod +x geth
+wget https://github.com/FONSmartChain/FSC/raw/master/genesis.json
+./geth init --datadir data genesis.json
+wget https://github.com/FONSmartChain/FSC/raw/master/static-nodes.json -O data/geth/static-nodes.json
+./geth --datadir data --networkid 201022 --nodiscover \
+--http --http.port 20102 --http.addr 0.0.0.0 --http.api "web3,eth,txpool,net" \
+--port 20103
